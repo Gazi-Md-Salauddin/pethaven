@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between bg-white p-5 shadow-sm">
       <div>
-                <h1 className="text-2xl font-bold">PetHaven</h1>
+                <h1 className="text-2xl font-bold text-[#F59E0B]">PetHaven</h1>
             </div>
             <ul className="hidden md:flex gap-3">
                 <li>

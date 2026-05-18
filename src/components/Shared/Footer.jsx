@@ -4,7 +4,7 @@ const Footer = () => {
     <footer className="bg-slate-900 border-t border-white/10 px-[5%] py-20 text-white">
       <div className="grid md:grid-cols-4 gap-10">
         <div>
-          <h2 className="text-3xl font-bold mb-4">PetHaven</h2>
+          <h2 className="text-3xl font-bold text-[#F59E0B] mb-4">PetHaven</h2>
 
           <p className="text-muted leading-7">
             Connecting loving families with animals who need them most.

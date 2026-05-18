@@ -1,7 +1,12 @@
 "use client";
-import {Button, Description, FieldError, Form, Input, Label, TextField} from "@heroui/react";
+import { Button, Description, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+import { authClient } from '@/lib/auth-client'
+import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 const RegisterPage = () => {
+  const router = useRouter()
+  
   const onSubmit = async (e) => {
         e.preventDefault();
 
@@ -25,7 +30,9 @@ const RegisterPage = () => {
         }
     };
   return (
-    <Form className="flex w-full mx-auto flex-col gap-4" onSubmit={onSubmit}>
+    <Form className="flex w-xs mx-auto flex-col gap-4 border border-gray-200 rounded-xl p-4 my-12" onSubmit={onSubmit}> 
+    <h2 className="text-2xl font-bold">Register</h2>
+      
       <TextField
         isRequired
         name="name"
@@ -47,9 +54,16 @@ const RegisterPage = () => {
         }}
       >
         <Label>Email</Label>
-        <Input placeholder="john@example.com" />
+        <Input placeholder="pethaven@example.com" />
         <FieldError />
       </TextField>
+      <label className="label">Image URL</label>
+            <input
+                className="input"
+                name="image"
+                type="text"
+                placeholder="Image URL"
+            />
       <TextField
         isRequired
         minLength={8}
@@ -81,6 +95,14 @@ const RegisterPage = () => {
           Reset
         </Button>
       </div>
+      <p className="text-center my-6">OR</p>
+            <button
+                className="btn outline flex justify-center items-center gap-3 mx-16 rounded-xl"
+                type="button"
+            >
+                <FcGoogle/>
+                Login with Google
+            </button>
     </Form>
   )
 }

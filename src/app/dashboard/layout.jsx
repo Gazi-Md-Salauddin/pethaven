@@ -26,10 +26,7 @@ export default function DashboardLayout({ children }) {
     <div className="flex min-h-screen">
       
       {/* Sidebar */}
-      <div className="w-64 border-r border-white/10 p-5">
-        <h1 className="text-2xl font-bold mb-8">
-          PetHaven
-        </h1>
+      <div className="w-64 border-r border-gray/10 p-5">
 
         <div className="space-y-3">
           {links.map((link) => (
@@ -38,8 +35,8 @@ export default function DashboardLayout({ children }) {
               href={link.href}
               className={`block px-4 py-3 rounded-xl transition ${
                 pathname === link.href
-                  ? "bg-orange-500 text-black"
-                  : "hover:bg-white/10"
+                  ? "bg-[#F59E0B] text-white font-bold"
+                  : "hover:bg-gray-200"
               }`}
             >
               {link.name}

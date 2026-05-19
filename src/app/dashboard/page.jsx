@@ -1,11 +1,13 @@
-import React from 'react'
-
-const DashboardPage = () => {
+export default function DashboardPage() {
   return (
     <div>
-      Dashboard Page
-    </div>
-  )
-}
+      <h1 className="text-3xl font-bold">
+        Dashboard Home
+      </h1>
 
-export default DashboardPage
+      <p className="mt-3 text-gray-400">
+        Welcome to your dashboard.
+      </p>
+    </div>
+  );
+}

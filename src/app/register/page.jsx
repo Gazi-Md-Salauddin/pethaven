@@ -43,7 +43,6 @@ const RegisterPage = () => {
             provider: "google"
         });
     };
-        alert("Register Successful");
 
     return (
         <Form

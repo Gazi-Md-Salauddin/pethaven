@@ -3,8 +3,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@heroui/react";
+import UserDropdown from "./UserDropdown";
+import { authClient } from "@/lib/auth-client";
 
 const Navbar = () => {
+    const userData = authClient.useSession();
+    const user = userData?.data?.user;
+    
+    
     return (
         <nav className="flex justify-between bg-white p-5 shadow-sm">
             <div>
@@ -19,29 +25,24 @@ const Navbar = () => {
                 </li>
             </ul>
 
-            <ul className="hidden md:flex gap-3">
-                <li>
-                    <Link href={"/dashboard"}>Dashboard</Link>
-                </li>
-
-                <>
-                    <li>Avatar</li>
+            {user ? (
+                <ul className="hidden md:flex gap-3">
+                    
                     <li>
-                        <Button variant="danger" className={"rounded-none"}>
-                            Logout
-                        </Button>
+                        <UserDropdown />
                     </li>
-                </>
-
-                <>
+                    
+                </ul>
+            ) : (
+                <ul className="hidden md:flex gap-3">
                     <li>
                         <Link href={"/login"}>Login</Link>
                     </li>
                     <li>
                         <Link href={"/register"}>Register</Link>
                     </li>
-                </>
-            </ul>
+                </ul>
+            )}
         </nav>
     );
 };

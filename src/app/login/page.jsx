@@ -34,6 +34,13 @@ const LoginPage = () => {
             router.push("/");
         }
     };
+    
+    const handleGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google"
+        });
+    };
+    
     return (
         <div className="mb-54">
             <Form
@@ -57,17 +64,17 @@ const LoginPage = () => {
                     }}
                 >
                     <Label>Email</Label>
-                    <Input placeholder="john@example.com" />
+                    <Input placeholder="pethaven@example.com"/>
                     <FieldError />
                 </TextField>
                 <TextField
                     isRequired
-                    minLength={8}
+                    minLength={6}
                     name="password"
                     type="password"
                     validate={value => {
-                        if (value.length < 8) {
-                            return "Password must be at least 8 characters";
+                        if (value.length < 6) {
+                            return "Password must be at least 6 characters";
                         }
                         if (!/[A-Z]/.test(value)) {
                             return "Password must contain at least one uppercase letter";
@@ -81,7 +88,7 @@ const LoginPage = () => {
                     <Label>Password</Label>
                     <Input placeholder="Enter your password" />
                     <Description>
-                        Must be at least 8 characters with 1 uppercase and 1
+                        Must be at least 6 characters with 1 uppercase and 1
                         number
                     </Description>
                     <FieldError />
@@ -94,7 +101,7 @@ const LoginPage = () => {
                 </div>
                 <p className="text-center my-6">OR</p>
             <button
-               
+               onClick={handleGoogleSignIn}
                 className="btn outline flex justify-center items-center gap-3 mx-12 mb-8 rounded-xl"
                 type="button"
             >

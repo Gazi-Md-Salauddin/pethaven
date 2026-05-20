@@ -2,10 +2,26 @@
 import {Rocket} from "@gravity-ui/icons";
 import {Button, Modal} from "@heroui/react";
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea, Card } from "@heroui/react";
+import { authClient } from "@/lib/auth-client";
 
-const RequestModal = ({pet}) => {
+const RequestModal = async({pet}) => {
+  const { data: session } = authClient.useSession();
+    const user = session?.user;
+    
   const { _id, petName, species, location } =
         pet;
+        
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/request`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json' 
+        
+      },
+      body: JSON.stringify(pet)
+    })
+    const data = await res.json()
+    console.log(data)
+        
   return (
     <Modal>
       <Button variant="secondary">Requests</Button>
@@ -18,6 +34,7 @@ const RequestModal = ({pet}) => {
                 <Rocket className="size-5" />
               </Modal.Icon>
               <Modal.Heading>{petName}</Modal.Heading>
+              <h2>{user?.email}</h2>
             </Modal.Header>
             <Modal.Body>
               <div className="md:col-span-2">

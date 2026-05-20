@@ -31,8 +31,8 @@ const ListingCard = ({pet}) => {
                                     {petName}
                                 </h2>
                             </div>
-                            <div className="flex gap-1 items-center">
-                                species: {species}
+                            <div className="flex gap-4 justify-center items-center bg-amber-200 rounded-full text-orange-400">
+                                {species}
                             </div>
                         </div>
 

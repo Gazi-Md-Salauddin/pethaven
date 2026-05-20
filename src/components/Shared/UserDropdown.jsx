@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { authClient } from "@/lib/auth-client";
 
 const UserDropdown = () => {
+  const { data: session } = authClient.useSession();
+    const user = session?.user;
   
   const handleLogout = async () => {
         await authClient.signOut();
@@ -14,10 +16,10 @@ const UserDropdown = () => {
       <Dropdown.Trigger className="rounded-full">
         <Avatar>
           <Avatar.Image
-            alt="Junior Garcia"
-            src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg"
+            alt={user?.name}
+            src={user?.image}
           />
-          <Avatar.Fallback delayMs={600}>JD</Avatar.Fallback>
+          <Avatar.Fallback delayMs={600}>{user.name.charAt(0)}</Avatar.Fallback>
         </Avatar>
       </Dropdown.Trigger>
       <Dropdown.Popover>
@@ -25,14 +27,14 @@ const UserDropdown = () => {
           <div className="flex items-center gap-2">
             <Avatar size="sm">
               <Avatar.Image
-                alt="Jane"
-                src="https://heroui-assets.nyc3.cdn.digitaloceanspaces.com/avatars/orange.jpg"
+                alt={user?.name}
+                src={user?.image}
               />
-              <Avatar.Fallback delayMs={600}>JD</Avatar.Fallback>
+              <Avatar.Fallback delayMs={600}>{user.name.charAt(0)}</Avatar.Fallback>
             </Avatar>
             <div className="flex flex-col gap-0">
-              <p className="text-sm leading-5 font-medium">Jane Doe</p>
-              <p className="text-xs leading-none text-muted">jane@example.com</p>
+              <p className="text-sm leading-5 font-medium">{user?.name}</p>
+              <p className="text-xs leading-none text-muted">{user?.email}</p>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 //import { BiEdit } from "react-icons/bi";
 //import { FaRegCalendar } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
+import RequestCard from '@/components/RequestCard'
 
 const PetDetailsPage = async ({ params }) => {
     const { id } = await params;
@@ -65,7 +66,7 @@ const PetDetailsPage = async ({ params }) => {
 
                 <p>{description}</p>
             </div>
-            {/*<BookingCard pet={pet} />*/}
+            <RequestCard pet={pet} />
         </div>
     );
 };

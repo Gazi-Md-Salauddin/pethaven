@@ -6,8 +6,11 @@ import Image from "next/image";
 import { LuMapPin } from "react-icons/lu";
 import { FaRegCalendar } from "react-icons/fa6";
 import Link from "next/link";
+import RequestModal from '@/components/RequestModal'
+import EditModal from '@/components/EditModal'
+import DeleteAlert from '@/components/DeleteAlert'
 
-const PetCard = ({pet}) => {
+const ListingCard = ({pet}) => {
   const { _id, imageUrl, fee, breed, age, gender, petName, species, location } =
         pet;
   return (
@@ -20,9 +23,7 @@ const PetCard = ({pet}) => {
                 />
 
                 <div className="p-2">
-                    <div className="flex items-center gap-1">
-                        <LuMapPin /> <span>{location}</span>
-                    </div>
+                    
                     <div className="flex justify-between">
                         <div>
                             <div>
@@ -45,19 +46,30 @@ const PetCard = ({pet}) => {
                             className={"mt-1 text-[#F59E0B]"}
                         >
                             {" "}
-                            <FiExternalLink /> View Details
+                            View
                         </Button>
                     </Link>
-                    <Button
+                    <EditModal
                             variant="ghost"
                             className={"mt-1 text-[#F59E0B]"}
-                        >
-                            {" "}
-                            Adopt Now
-                        </Button>
+                        pet={pet}
+                            
+                        />
+                    <RequestModal
+                            variant="ghost"
+                            className={"mt-1 text-[#F59E0B]"}
+                        pet={pet}
+                            
+                        />
+                        <DeleteAlert
+                            variant="ghost"
+                            className={"mt-1 text-[#F59E0B]"}
+                            
+                            pet={pet}
+                        />
                 </div>
             </div>
   )
 }
 
-export default PetCard
+export default ListingCard

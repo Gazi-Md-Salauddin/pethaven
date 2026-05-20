@@ -31,12 +31,12 @@ const AddPetPage = () => {
               <div className="md:col-span-2">
                 <TextField name="petName" isRequired>
                   <Label>Pet Name</Label>
-                  <Input placeholder="Cat" className="rounded-2xl" />
+                  <Input placeholder="Gloster Canary" className="rounded-2xl" />
                   <FieldError />
                 </TextField>
               </div>
 
-              {/* Gender */}
+              {/* Location */}
               <TextField name="location" isRequired>
                 <Label>Location</Label>
                 <Input placeholder="Bangladesh" className="rounded-2xl" />
@@ -137,7 +137,7 @@ const AddPetPage = () => {
               <TextField name="healthStatus" isRequired>
                 <Label>Health Status</Label>
                 <Input
-                  placeholder="2 years"
+                  placeholder="Excilent"
                   className="rounded-2xl"
                 />
                 <FieldError />
@@ -146,7 +146,7 @@ const AddPetPage = () => {
               <TextField name="vaccinationStatus" isRequired>
                 <Label>Vaccination Status</Label>
                 <Input
-                  placeholder="2 years"
+                  placeholder="Vaccinated"
                   className="rounded-2xl"
                 />
                 <FieldError />

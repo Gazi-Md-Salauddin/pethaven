@@ -13,12 +13,12 @@ export default function DashboardLayout({ children }) {
       href: "/dashboard/add-pets",
     },
     {
-      name: "My Requests",
-      href: "/dashboard/my-requests",
-    },
-    {
       name: "My Listing",
       href: "/dashboard/my-listings",
+    },
+    {
+      name: "My Requests",
+      href: "/dashboard/my-requests",
     },
   ];
 

@@ -1,26 +1,26 @@
-
+"use client"
 import {Rocket} from "@gravity-ui/icons";
 import {Button, Modal} from "@heroui/react";
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea, Card } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 
-const RequestModal = async({pet}) => {
-  const { data: session } = authClient.useSession();
-    const user = session?.user;
+const RequestModal = ({pet}) => {
+   const { data: session } = authClient.useSession();
+     const user = session?.user;
     
-  const { _id, petName, species, location } =
-        pet;
+   const { _id, petName, species, location } =
+         pet;
         
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/request`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json' 
+  //       const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/request`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json' 
         
-      },
-      body: JSON.stringify(pet)
-    })
-    const data = await res.json()
-    console.log(data)
+  //     },
+  //     body: JSON.stringify(pet)
+  //   })
+  //   const data = await res.json()
+  //   console.log(data)
         
   return (
     <Modal>

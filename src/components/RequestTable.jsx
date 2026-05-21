@@ -1,8 +1,10 @@
 "use client";
 import { format } from 'date-fns';
-
+import Link from 'next/link'
+import CancelAlert from '@/components/CancelAlert'
 
 const RequestTable = ({requests}) => {
+  
   const reversedRequests = [...requests].reverse();
   return (
     <div className="overflow-x-auto p-6">
@@ -10,7 +12,7 @@ const RequestTable = ({requests}) => {
         <thead className="bg-gray-100">
           <tr>
             <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
-              Name
+              Pet Name
             </th>
 
 
@@ -58,13 +60,14 @@ const RequestTable = ({requests}) => {
 
 
               <td className="px-6 py-4 flex justify-center gap-2">
-                <button className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
-                  Edit
+                <Link href={`/all-pets/${request.petId}`}>
+                <button className="px-4 py-2 bg-[#F59E0B] text-white rounded-lg hover:bg-yellow-600">
+                  View
                 </button>
-
-                <button className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
-                  Cancel
-                </button>
+                </Link>
+                
+                <CancelAlert request={request}/>
+                
               </td>
             </tr>
           ))}

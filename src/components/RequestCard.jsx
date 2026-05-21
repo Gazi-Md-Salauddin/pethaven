@@ -31,7 +31,8 @@ const RequestCard = ({ pet }) => {
             imageUrl,
             location,
             description,
-            departureDate: new Date(departureDate)
+            departureDate: new Date(departureDate),
+        status: "Pending"
         };
         const res = await fetch(
             `${process.env.NEXT_PUBLIC_SERVER_URL}/request`,
@@ -99,18 +100,11 @@ const RequestCard = ({ pet }) => {
                 </TextField>
                 
                 {/*DepartureDate*/}
-                <DateField
-                onChange={setDepartureDate}
-                className="w-[256px]"
-                name="date"
-            >
-                <Label>Departure Date</Label>
-                <DateField.Group>
-                    <DateField.Input>
-                        {segment => <DateField.Segment segment={segment} />}
-                    </DateField.Input>
-                </DateField.Group>
-            </DateField>
+                <TextField name="departureDate" type="date" isRequired>
+                  <Label>Pickup Date</Label>
+                  <Input type="date" className="rounded-2xl" />
+                  <FieldError />
+                </TextField>
                 
                 {/* Description */}
                 <div className="md:col-span-2">

@@ -32,7 +32,7 @@ const RequestCard = ({ pet }) => {
             location,
             description,
             departureDate: new Date(departureDate),
-        status: "Pending"
+            status: "Pending"
         };
         const res = await fetch(
             `${process.env.NEXT_PUBLIC_SERVER_URL}/request`,
@@ -62,19 +62,27 @@ const RequestCard = ({ pet }) => {
                         />
                         <FieldError />
                     </TextField>
-                    <TextField name="userName" defaultValue={user?.name} isRequired>
+                    <TextField
+                        name="userName"
+                        defaultValue={user?.name}
+                        isRequired
+                    >
                         <Label>User Name</Label>
                         <Input
-                        value={user?.name}
+                            value={user?.name}
                             className="rounded-2xl"
                             readOnly
                         />
                         <FieldError />
                     </TextField>
-                    <TextField name="userEmail" defaultValue={user?.email} isRequired>
+                    <TextField
+                        name="userEmail"
+                        defaultValue={user?.email}
+                        isRequired
+                    >
                         <Label>User Email</Label>
                         <Input
-                        value={user?.email}
+                            value={user?.email}
                             className="rounded-2xl"
                             readOnly
                         />
@@ -98,30 +106,35 @@ const RequestCard = ({ pet }) => {
                     />
                     <FieldError />
                 </TextField>
-                
+
                 {/*DepartureDate*/}
                 <TextField name="departureDate" type="date" isRequired>
-                  <Label>Pickup Date</Label>
-                  <Input type="date" className="rounded-2xl" />
-                  <FieldError />
+                    <Label>Pickup Date</Label>
+                    <Input
+                        type="date"
+                        className="rounded-2xl"
+                        value={departureDate}
+                        
+                    />
+                    <FieldError />
                 </TextField>
-                
+
                 {/* Description */}
                 <div className="md:col-span-2">
-                    <TextField
-                        name="description"
-                        isRequired
-                    >
+                    <TextField name="description" isRequired>
                         <Label>Description</Label>
                         <TextArea
-                        
                             placeholder="Write your message"
                             className="rounded-3xl"
                         />
                         <FieldError />
                     </TextField>
                 </div>
-                <Button onClick={handleRequest} type="submit" className="w-full">
+                <Button
+                    onClick={handleRequest}
+                    type="submit"
+                    className="w-full"
+                >
                     Adopt
                 </Button>
             </div>

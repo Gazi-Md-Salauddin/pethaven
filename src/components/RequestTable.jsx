@@ -2,6 +2,7 @@
 import { format } from 'date-fns';
 import Link from 'next/link'
 import CancelAlert from '@/components/CancelAlert'
+//import RequestModal from '@/components/RequestModal'
 
 const RequestTable = ({requests}) => {
   
@@ -35,19 +36,19 @@ const RequestTable = ({requests}) => {
 
         <tbody>
           {reversedRequests.map((request) => (
+          
             <tr
               key={request._id}
               className="border-t hover:bg-gray-50 transition"
             >
+              
               <td className="px-6 py-4">{request.petName}</td>
-
               <td>{request?.updatedAt}</td>
               <td className="px-6 py-4">{format(new Date(request?.departureDate), 'dd MMM yyyy')}</td>
               <td className="px-6 py-4">
- 
                 <span
                   className={`px-3 py-1 rounded-full text-xs font-medium ${
-                    request.status === "Active"
+                    request.status === "Approved"
                       ? "bg-green-100 text-green-700"
                       : request.status === "Pending"
                       ? "bg-yellow-100 text-yellow-700"
@@ -57,8 +58,6 @@ const RequestTable = ({requests}) => {
                   {request.status}
                 </span>
               </td>
-
-
               <td className="px-6 py-4 flex justify-center gap-2">
                 <Link href={`/all-pets/${request.petId}`}>
                 <button className="px-4 py-2 bg-[#F59E0B] text-white rounded-lg hover:bg-yellow-600">

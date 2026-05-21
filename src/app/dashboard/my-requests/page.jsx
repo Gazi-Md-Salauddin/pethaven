@@ -7,10 +7,10 @@ const MyRequestPage = async() => {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-  console.log(session)
+  
   const user = session?.user;
   console.log(user)
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/request/${user?.id}`)
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/request/${user?.id}`,)
   const requests = await res.json()
   console.log(requests)
   return (

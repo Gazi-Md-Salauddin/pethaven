@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState} from "react";
 import { Button } from "@heroui/react";
 import { FiExternalLink } from "react-icons/fi";
 import Image from "next/image";
@@ -13,6 +13,7 @@ import DeleteAlert from '@/components/DeleteAlert'
 const ListingCard = ({pet}) => {
   const { _id, imageUrl, fee, breed, age, gender, petName, species, location } =
         pet;
+        const [departureDate, setDepartureDate] = useState("");
   return (
     <div className="border">
                 <Image
@@ -58,7 +59,8 @@ const ListingCard = ({pet}) => {
                     <RequestModal
                             variant="ghost"
                             className={"mt-1 text-[#F59E0B]"}
-                        pet={pet}
+                            pet={pet}
+                       
                             
                         />
                         <DeleteAlert

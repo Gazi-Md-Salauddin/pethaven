@@ -15,7 +15,7 @@ import {
 const EditModal = ({ pet }) => {
     const { _id, petName, breed, imageUrl, species, fee, gender, description } = pet;
 
-    const onSubmit = async e => {
+    const onSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const pet = Object.fromEntries(formData.entries());

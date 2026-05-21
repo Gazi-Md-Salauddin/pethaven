@@ -1,4 +1,4 @@
-"use client";
+
 import {Rocket} from "@gravity-ui/icons";
 import {Button, Modal} from "@heroui/react";
 import { FieldError, Input, Label, TextField, Select, ListBox, TextArea, Card } from "@heroui/react";

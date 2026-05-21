@@ -5,14 +5,12 @@ import Image from "next/image";
 //import { BiEdit } from "react-icons/bi";
 //import { FaRegCalendar } from "react-icons/fa6";
 import { LuMapPin } from "react-icons/lu";
-import RequestCard from '@/components/RequestCard'
+import RequestCard from "@/components/RequestCard";
 
 const PetDetailsPage = async ({ params }) => {
     const { id } = await params;
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_URL}/pet/${id}`
-    );
-    console.log(id)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet/${id}`);
+    console.log(id);
     const pet = await res.json();
 
     const {
@@ -30,43 +28,46 @@ const PetDetailsPage = async ({ params }) => {
     } = pet;
 
     return (
-        <div className="max-w-6xl mx-auto">
-            <div className="flex items-center gap-3 justify-end mt-5 mb-3"></div>
-            <Image
-                className="w-full h-100 object-cover"
-                alt={petName}
-                src={imageUrl}
-                height={500}
-                width={500}
-            />
+        <div className="flex justify-between mx-6">
+            <div className="mt-5 mb-3">
+                <Image
+                    className="w-full h-100"
+                    alt={petName}
+                    src={imageUrl}
+                    height={500}
+                    width={500}
+                />
 
-            <div className="p-2">
-                <div className="flex items-center gap-1">
-                    <LuMapPin /> <span>{location}</span>
-                </div>
-                <div className="flex justify-between">
-                    <div>
+                <div className="p-2">
+                    <div className="flex items-center gap-1">
+                        <LuMapPin /> <span>{location}</span>
+                    </div>
+                    <div className="flex justify-between">
                         <div>
-                            <h2 className="text-xl font-bold">{petName}</h2>
+                            <div>
+                                <h2 className="text-xl font-bold">{petName}</h2>
+                            </div>
+                            <div className="flex gap-1 items-center">
+                                Species: {species}
+                            </div>
+                            <div className="flex gap-1 items-center">
+                                Breed: {breed}
+                            </div>
                         </div>
-                        <div className="flex gap-1 items-center">
-                            Species: {species}
-                        </div>
-                        <div className="flex gap-1 items-center">
-                            Breed: {breed}
+
+                        <div>
+                            <h3 className="text-2xl font-bold">$ {fee}</h3>
                         </div>
                     </div>
 
-                    <div>
-                        <h3 className="text-2xl font-bold">$ {fee}</h3>
-                    </div>
+                    <h1 className="mt-10 text-2xl font-bold">Overview</h1>
+
+                    <p>{description}</p>
                 </div>
-
-                <h1 className="mt-10 text-2xl font-bold">Overview</h1>
-
-                <p>{description}</p>
             </div>
-            <RequestCard pet={pet} />
+            <div>
+                <RequestCard pet={pet} />
+            </div>
         </div>
     );
 };

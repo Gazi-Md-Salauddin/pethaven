@@ -10,7 +10,6 @@ import RequestCard from "@/components/RequestCard";
 const PetDetailsPage = async ({ params }) => {
     const { id } = await params;
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet/${id}`);
-    console.log(id);
     const pet = await res.json();
 
     const {

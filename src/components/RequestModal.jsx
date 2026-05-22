@@ -13,7 +13,7 @@ import {
 } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
 
-const RequestModal = ({ pet }) => {
+const RequestModal = ({ pet, pickupDate }) => {
     console.log(pet);
     const { data: session } = authClient.useSession();
     const user = session?.user;
@@ -31,7 +31,11 @@ const RequestModal = ({ pet }) => {
     //   })
     //   const data = await res.json()
     //   console.log(data)
-
+    
+    const formattedPickupDate = pickupDate 
+        ? new Date(pickupDate).toISOString().split('T')[0] 
+        : "";
+    
     const handleStatusUpdate = async (newStatus) => {
         console.log(pet._id);
         if (!pet?._id) return alert("Request ID missing!");
@@ -69,12 +73,14 @@ const RequestModal = ({ pet }) => {
                                 <TextField
                                     name="departureDate"
                                     type="date"
+                                    defaultValue={formattedPickupDate}
                                     isRequired
                                 >
                                     <Label>Pickup Date</Label>
                                     <Input
                                         type="date"
                                         className="rounded-2xl"
+                                        
                                     />
                                     <FieldError />
                                 </TextField>

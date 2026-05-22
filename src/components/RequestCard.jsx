@@ -17,7 +17,7 @@ import {
 const RequestCard = ({ pet }) => {
     const { data: session } = authClient.useSession();
     const user = session?.user;
-    const [departureDate, setDepartureDate] = useState(null);
+    const [departureDate, setDepartureDate] = useState("");
     const { fee, _id, petName, imageUrl, location, description } = pet;
 
     const handleRequest = async () => {
@@ -32,7 +32,8 @@ const RequestCard = ({ pet }) => {
             location,
             description,
             departureDate: new Date(departureDate),
-            status: "Pending"
+            status: "Pending",
+            createdAt: new Date()
         };
         const res = await fetch(
             `${process.env.NEXT_PUBLIC_SERVER_URL}/request`,
@@ -114,7 +115,7 @@ const RequestCard = ({ pet }) => {
                         type="date"
                         className="rounded-2xl"
                         value={departureDate}
-                        
+                        onChange={(e) => setDepartureDate(e.target.value)}
                     />
                     <FieldError />
                 </TextField>
@@ -135,7 +136,7 @@ const RequestCard = ({ pet }) => {
                     type="submit"
                     className="w-full"
                 >
-                    Adopt
+                    Adopt Now
                 </Button>
             </div>
         </div>

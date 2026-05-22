@@ -60,7 +60,7 @@ const ListingCard = ({pet}) => {
                             variant="ghost"
                             className={"mt-1 text-[#F59E0B]"}
                             pet={pet}
-                       
+                            pickupDate={pet?.departureDate || pet?.request?.departureDate} 
                             
                         />
                         <DeleteAlert

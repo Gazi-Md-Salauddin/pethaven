@@ -14,7 +14,7 @@ const CancelAlert = ({request}) => {
             body: JSON.stringify(request)
         });
         const data = await res.json()
-        console.log(data)
+        
     }
   
   return (
@@ -29,26 +29,26 @@ const CancelAlert = ({request}) => {
                         <AlertDialog.Header>
                             <AlertDialog.Icon status="danger" />
                             <AlertDialog.Heading>
-                                Delete pet permanently?
+                                Delete pet from request?
                             </AlertDialog.Heading>
                         </AlertDialog.Header>
                         <AlertDialog.Body>
                             <p>
                                 This will permanently delete{" "}
-                                <strong>Pet Name</strong> and all of
-                                its data. This action cannot be undone.
+                                <strong>{request.petName}</strong> and all of
+                                its data.
                             </p>
                         </AlertDialog.Body>
                         <AlertDialog.Footer>
                             <Button slot="close" variant="tertiary">
-                                Cancel
+                                Keep Request
                             </Button>
                             <Button
                                 onClick={handleDelete}
                                 slot="close"
                                 variant="danger"
                             >
-                                Delete
+                                Cancel Request
                             </Button>
                         </AlertDialog.Footer>
                     </AlertDialog.Dialog>

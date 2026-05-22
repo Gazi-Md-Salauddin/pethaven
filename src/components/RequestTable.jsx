@@ -2,7 +2,6 @@
 import { format } from "date-fns";
 import Link from "next/link";
 import CancelAlert from "@/components/CancelAlert";
-import RequestModal from "@/components/RequestModal";
 
 const RequestTable = ({ requests }) => {
     const reversedRequests = [...requests].reverse();

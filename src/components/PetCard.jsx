@@ -48,13 +48,15 @@ const PetCard = ({pet}) => {
                             <FiExternalLink /> View Details
                         </Button>
                     </Link>
-                    <Button
+                    <Link href={`/all-pets/${_id}`}>
+                        <Button
                             variant="ghost"
                             className={"mt-1 text-[#F59E0B]"}
                         >
                             {" "}
-                            Adopt Now
+                            <FiExternalLink />Adopt Now
                         </Button>
+                    </Link>
                 </div>
             </div>
   )

@@ -1,15 +1,21 @@
 import React from "react";
 import Image from "next/image";
-//import { auth } from "@/lib/auth";
-//import { headers } from "next/headers";
-//import { BiEdit } from "react-icons/bi";
-//import { FaRegCalendar } from "react-icons/fa6";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 import { LuMapPin } from "react-icons/lu";
 import RequestCard from "@/components/RequestCard";
 
 const PetDetailsPage = async ({ params }) => {
     const { id } = await params;
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet/${id}`);
+    const { token } = await auth.api.getToken({
+      headers: await headers()
+    })
+    console.log(token)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet/${id}`, {
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    });
     const pet = await res.json();
 
     const {

@@ -13,6 +13,10 @@ export const auth = betterAuth({
     emailAndPassword: {
         enabled: true
     },
+    trustedOrigins: [
+    "http://localhost:3000",
+    "https://pethaven-woad.vercel.app"
+  ],
     socialProviders: {
         google: { 
             clientId: process.env.GOOGLE_CLIENT_ID, 

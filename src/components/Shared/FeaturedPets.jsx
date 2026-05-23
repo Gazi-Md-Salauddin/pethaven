@@ -15,6 +15,7 @@ const FeaturedPets = ({ pet }) => {
                     src={pet.imageUrl}
                     height={400}
                     width={400}
+                    className="rounded-xl"
                 />
 
                 <div className="p-2">

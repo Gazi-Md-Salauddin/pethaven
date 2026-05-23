@@ -14,7 +14,7 @@ const MyListingPage = async() => {
   });
   
   const user = session?.user;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/my-pets`, {
     headers: {
       authorization: `Bearer ${token}`
     }

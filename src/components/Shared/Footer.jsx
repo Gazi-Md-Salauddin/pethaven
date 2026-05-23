@@ -1,4 +1,6 @@
 
+import Link from 'next/link'
+
 const Footer = () => {
   return (
     <footer className="bg-slate-900 border-t border-white/10 px-[5%] py-20 text-white">
@@ -15,9 +17,9 @@ const Footer = () => {
           <h4 className="font-bold mb-4">Quick Links</h4>
 
           <div className="flex flex-col gap-3 text-muted">
-            <a href="#">Home</a>
-            <a href="#pets">All Pets</a>
-            <a href="#team">Team</a>
+            <Link href="/">Home</Link>
+            <Link href="/all-pets">All Pets</Link>
+            
           </div>
         </div>
 
@@ -37,13 +39,13 @@ const Footer = () => {
           <div className="flex flex-col gap-3 text-muted">
             <p>📍 New York</p>
             <p>📞 +1 234 567</p>
-            <p>✉ hello@pethaven.com</p>
+            <p>✉ pethaven132@gmail.com</p>
           </div>
         </div>
       </div>
 
       <div className="border-t border-white/10 mt-16 pt-6 text-center text-muted text-sm">
-        © 2025 PetHaven. All rights reserved.
+        © 2026 PetHaven. All rights reserved.
       </div>
     </footer>
   );

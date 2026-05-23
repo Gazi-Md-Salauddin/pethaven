@@ -12,6 +12,7 @@ import { useRouter } from "next/navigation";
 import { authClient } from '@/lib/auth-client'
 import { FcGoogle } from "react-icons/fc";
 import Link from 'next/link'
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
     const router = useRouter();
@@ -27,10 +28,10 @@ const LoginPage = () => {
             password
         });
         if (error) {
-            alert(error.message);
+            toast.error(error.message);
         }
         if (data) {
-            alert("Successfully Login");
+            toast.success("Successfully Login");
             router.push("/");
         }
     };

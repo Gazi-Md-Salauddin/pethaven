@@ -11,6 +11,8 @@ import {
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
+import Link from 'next/link'
+import toast from "react-hot-toast";
 
 const RegisterPage = () => {
     const router = useRouter();
@@ -30,10 +32,10 @@ const RegisterPage = () => {
             password
         });
         if (error) {
-            alert(error.message);
+            toast.error(error.message);
         }
         if (data) {
-            alert("Successfully Register");
+            toast.success("Successfully Register");
             router.push("/login");
         }
     };
@@ -49,7 +51,7 @@ const RegisterPage = () => {
             className="flex w-xs mx-auto flex-col gap-4 border border-gray-200 rounded-xl p-4 my-12"
             onSubmit={onSubmit}
         >
-            <h2 className="text-2xl font-bold">Register</h2>
+            <h2 className="text-2xl font-bold text-center">Create A Account</h2>
 
             <TextField isRequired name="name" type="text">
                 <Label>Name</Label>
@@ -120,6 +122,7 @@ const RegisterPage = () => {
                 <FcGoogle />
                 Login with Google
             </button>
+            <p className="flex justify-center items-center gap-2">Already Have An Account?<Link href={"/login"} className="text-blue-500">Login</Link></p>
         </Form>
     );
 };

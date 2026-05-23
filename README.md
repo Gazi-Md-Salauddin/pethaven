@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🐾 PetHaven — Pet Adoption Platform
+# 🎯 Purpose
+Pet Haven is a pet adoption platform where users can browse pets, add pets for adoption, and find loving homes for animals. The platform helps connect pet owners, shelters, and adopters in an easy and organized way.
 
-## Getting Started
+# 🌐 Live Link
+https://pethaven-woad.vercel.app
 
-First, run the development server:
+# 🚀 Features
+- 🔐 User authentication and secure login system
+- 🐶 Add pets for adoption with detailed information
+- 🔍 Search pets by name for easy finding
+- 📋 Manage personal pet listings
+- ❤️ Responsive and user-friendly UI for all devices
+- 🖼️ Upload pet images for better adoption experience
+- 🔒 Protected routes using authentication token
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 NPM packages used 
+- **React**
+- **Next.js**
+- **Javascript**
+- **Tailwind CSS**
+- **HeroUI**
+- **MongoDB**
+- **NodeJs**
+- **Express.js**
+- **Better Auth**
+- **Jose-cjs (JWT Verification)**
+- **Cors**
+- **Dotenv**
+- **React Icons**

@@ -13,6 +13,7 @@ import {
     DateField,
     Card
 } from "@heroui/react";
+import toast from "react-hot-toast";
 
 const RequestCard = ({ pet }) => {
     const { data: session } = authClient.useSession();
@@ -46,7 +47,7 @@ const RequestCard = ({ pet }) => {
             }
         );
         const data = await res.json();
-        console.log(data);
+        toast.success("Successfully Adopted")
     };
     return (
         <div className="shadow-sm p-2">

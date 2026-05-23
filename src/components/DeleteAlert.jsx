@@ -20,7 +20,7 @@ const DeleteAlert = ({ pet }) => {
 
     return (
         <AlertDialog>
-            <Button className={"text-red-500 rounded-none"} variant="outline">
+            <Button className={"text-red-500 rounded-xl"} variant="outline">
                 Delete
             </Button>
             <AlertDialog.Backdrop>

@@ -36,7 +36,7 @@ const EditModal = ({ pet }) => {
     };
     return (
         <Modal>
-            <Button variant="secondary">Edit</Button>
+            <Button className="rounded-xl" variant="outline">Edit</Button>
             <Modal.Backdrop>
                 <Modal.Container>
                     <Modal.Dialog className="sm:max-w-[560px]">

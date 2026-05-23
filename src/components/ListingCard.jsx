@@ -32,7 +32,7 @@ const ListingCard = ({pet}) => {
                                     {petName}
                                 </h2>
                             </div>
-                            <div className="flex gap-4 justify-center items-center bg-amber-200 rounded-full text-orange-400">
+                            <div className="flex gap-4 justify-center items-center bg-amber-200 rounded-full text-orange-400 my-4">
                                 {species}
                             </div>
                         </div>
@@ -41,12 +41,12 @@ const ListingCard = ({pet}) => {
                             <h3 className="text-2xl font-bold">$ {fee}</h3>
                         </div>
                     </div>
-                    <div className="flex flex-wrap">
+                    <div className="flex flex-wrap gap-2 my-4">
                       
                     <Link href={`/all-pets/${_id}`}>
                         <Button
-                            variant="ghost"
-                            className={"mt-1 text-[#F59E0B]"}
+                            variant="outline"
+                            className={"mt-1 text-[#F59E0B] rounded-xl"}
                         >
                             {" "}
                             View

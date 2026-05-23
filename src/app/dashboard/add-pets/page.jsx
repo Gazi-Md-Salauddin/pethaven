@@ -8,11 +8,9 @@ import {
     Select,
     ListBox,
     TextArea,
-    Button,
-    Card
+    Button
 } from "@heroui/react";
-import { auth } from "@/lib/auth";
-import { headers } from "next/headers";
+import toast from 'react-hot-toast';
 
 const AddPetPage = () => {
     const onSubmit = async e => {
@@ -28,6 +26,8 @@ const AddPetPage = () => {
             body: JSON.stringify(pet)
         });
         const data = await res.json();
+        toast.success("Added Pet Successfully")
+      
     };
     return (
         <div>

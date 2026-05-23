@@ -1,5 +1,7 @@
 import React from 'react'
 import ListingCard from '@/components/ListingCard'
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const MyListingPage = async() => {
   

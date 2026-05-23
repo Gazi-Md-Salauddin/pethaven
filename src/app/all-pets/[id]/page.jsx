@@ -58,6 +58,18 @@ const PetDetailsPage = async ({ params }) => {
                             <div className="flex gap-1 items-center">
                                 Breed: {breed}
                             </div>
+                            <div className="flex gap-1 items-center">
+                                Age: {age}
+                            </div>
+                            <div className="flex gap-1 items-center">
+                                Gender: {gender}
+                            </div>
+                            <div className="flex gap-1 items-center">
+                                Health Status: {healthStatus}
+                            </div>
+                            <div className="flex gap-1 items-center">
+                                Vaccination Status: {vaccinationStatus}
+                            </div>
                         </div>
 
                         <div>

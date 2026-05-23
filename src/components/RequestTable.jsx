@@ -8,7 +8,7 @@ const RequestTable = ({ requests }) => {
     return (
         <div className="overflow-x-auto p-6">
             <table className="min-w-full border border-gray-200 rounded-lg overflow-hidden">
-                <thead className="bg-gray-100">
+                <thead className="hidden md:bg-gray-100 md:block">
                     <tr>
                         <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
                             Pet Name
@@ -31,7 +31,7 @@ const RequestTable = ({ requests }) => {
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody className="flex flex-col md:flex">
                     {reversedRequests.map(request => (
                         <tr
                             key={request._id}

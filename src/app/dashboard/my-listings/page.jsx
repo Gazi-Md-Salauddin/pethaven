@@ -16,7 +16,9 @@ const MyListingPage = async() => {
           <h2 className="text-xl font-bold">{pets.length}</h2>
           <p className="text-xl font-bold">Total</p>
         </div>
-        <div></div>
+        <div>
+          <p className="text-xl font-bold">Available</p>
+        </div>
         <div></div>
       </div>
       <div className="mx-3 grid grid-cols-1 md:grid-cols-3 gap-2">

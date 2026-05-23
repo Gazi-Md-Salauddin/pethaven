@@ -6,6 +6,7 @@ import WhyAdopt from "@/components/Shared/WhyAdopt";
 export default async function Home() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet`);
     const pets = await res.json();
+    const toppets = pets.slice(0, 3);
     return (
         <div>
             <Banner />
@@ -25,7 +26,7 @@ export default async function Home() {
 
             <h2 className="text-2xl font-bold mx-6">Featured pets</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {pets.map(pet => (
+                {toppets.map(pet => (
                     <FeaturedPets key={pet._id} pet={pet} />
                 ))}
             </div>

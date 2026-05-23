@@ -13,7 +13,7 @@ import DeleteAlert from '@/components/DeleteAlert'
 const ListingCard = ({pet}) => {
   const { _id, imageUrl, fee, breed, age, gender, petName, species, location } =
         pet;
-        const [departureDate, setDepartureDate] = useState("");
+        const [departureDate, setDepartureDate] = useState(" ");
   return (
     <div className="border">
                 <Image

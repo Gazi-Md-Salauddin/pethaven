@@ -8,7 +8,7 @@ import { FiExternalLink } from "react-icons/fi";
 
 const FeaturedPets = ({ pet }) => {
     return (
-        <section className="px-[5%] py-24">
+        <section className="px-[5%] md:py-24">
             <div>
                 <Image
                     alt={pet.petName}

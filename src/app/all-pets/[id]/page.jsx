@@ -33,7 +33,7 @@ const PetDetailsPage = async ({ params }) => {
     } = pet;
 
     return (
-        <div className="flex justify-between mx-6">
+        <div className="flex flex-col md:flex md:justify-between mx-6">
             <div className="mt-5 mb-3">
                 <Image
                     className="w-full h-100"

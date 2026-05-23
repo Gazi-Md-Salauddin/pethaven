@@ -25,7 +25,7 @@ export default async function Home() {
             </div>
 
             <h2 className="text-2xl font-bold mx-6">Featured pets</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {toppets.map(pet => (
                     <FeaturedPets key={pet._id} pet={pet} />
                 ))}

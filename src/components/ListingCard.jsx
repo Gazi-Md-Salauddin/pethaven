@@ -41,6 +41,8 @@ const ListingCard = ({pet}) => {
                             <h3 className="text-2xl font-bold">$ {fee}</h3>
                         </div>
                     </div>
+                    <div className="flex flex-wrap">
+                      
                     <Link href={`/all-pets/${_id}`}>
                         <Button
                             variant="ghost"
@@ -69,6 +71,7 @@ const ListingCard = ({pet}) => {
                             
                             pet={pet}
                         />
+                    </div>
                 </div>
             </div>
   )

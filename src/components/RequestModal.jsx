@@ -55,7 +55,7 @@ const RequestModal = ({ pet, pickupDate }) => {
 
     return (
         <Modal>
-            <Button variant="secondary">Requests</Button>
+            <Button className="bg-[#F59E0B]/10 text-[#F59E0B] rounded-xl">Requests</Button>
             <Modal.Backdrop>
                 <Modal.Container>
                     <Modal.Dialog className="sm:max-w-[360px]">

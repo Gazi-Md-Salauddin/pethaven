@@ -13,7 +13,6 @@ const MyRequestPage = async() => {
   });
 
   const user = session?.user;
-  console.log(user)
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/request/${user?.id}`, {
     headers: {
       authorization: `Bearer ${token}`

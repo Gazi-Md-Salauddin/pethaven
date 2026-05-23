@@ -5,10 +5,15 @@ import { headers } from "next/headers";
 
 const MyListingPage = async() => {
   
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+  
   const { token } = await auth.api.getToken({
     headers: await headers(),
   });
   
+  const user = session?.user;
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet`, {
     headers: {
       authorization: `Bearer ${token}`

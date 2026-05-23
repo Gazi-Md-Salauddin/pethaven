@@ -6,7 +6,8 @@ import WhyAdopt from "@/components/Shared/WhyAdopt";
 export default async function Home() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet`);
     const pets = await res.json();
-    const toppets = pets.slice(0, 3);
+   
+    const toppets = Array.isArray(pets) ? pets.slice(0, 3) : [];
     return (
         <div>
             <Banner />

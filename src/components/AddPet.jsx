@@ -20,7 +20,13 @@ const AddPet = () => {
         const pet = Object.fromEntries(formData.entries());
 
         const session = await authClient.getSession();
-    const token = session?.data?.session?.token;
+   console.log(session)
+    const { data: jwtData } = await authClient.token();
+        const token = jwtData?.token;
+        if (!token) {
+            toast.error("authentication falid. Enrollment not add.")
+            return;
+        }
     console.log(token)
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/pet`, {
             method: "POST",
@@ -31,7 +37,12 @@ const AddPet = () => {
             body: JSON.stringify(pet)
         });
         const data = await res.json();
+        if(res.ok) {
+          
         toast.success("Added Pet Successfully");
+        }else{
+          toast.error(data.message || "Failed to add pet")
+        }
     };
   return (
     <form onSubmit={onSubmit} className="p-4 md:p-10 space-y-8">

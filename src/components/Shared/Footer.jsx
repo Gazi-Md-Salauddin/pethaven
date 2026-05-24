@@ -1,5 +1,7 @@
-
 import Link from 'next/link'
+import { FaSquareFacebook } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -24,12 +26,12 @@ const Footer = () => {
         </div>
 
         <div>
-          <h4 className="font-bold mb-4">Pet Types</h4>
+          <h4 className="font-bold mb-4">Social Links</h4>
 
-          <div className="flex flex-col gap-3 text-muted">
-            <a href="#">Dogs</a>
-            <a href="#">Cats</a>
-            <a href="#">Birds</a>
+          <div className="flex gap-3">
+            <a href="#"><FaSquareFacebook /></a>
+            <a href="#"><FaInstagram /></a>
+            <a href="#"><FaYoutube /></a>
           </div>
         </div>
 

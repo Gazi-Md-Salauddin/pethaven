@@ -11,7 +11,7 @@ const PetCard = ({pet}) => {
   const { _id, imageUrl, fee, breed, age, gender, petName, species, location } =
         pet;
   return (
-    <div className="border">
+    <div className="border rounded-xl">
                 <Image
                     alt={petName}
                     src={imageUrl}

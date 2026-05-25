@@ -9,7 +9,7 @@ export default async function Home() {
    
     const toppets = Array.isArray(pets) ? pets.slice(0, 3) : [];
     return (
-        <div>
+        <div className="dark:bg-slate-950">
             <Banner />
             <div className="text-center mb-16">
                 <p className="uppercase tracking-[0.2em] text-amber-400 text-sm mb-3">
@@ -25,8 +25,8 @@ export default async function Home() {
                 </p>
             </div>
 
-            <h2 className="text-2xl font-bold mx-6">Featured pets</h2>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 className="text-2xl font-bold mx-6 my-6">Featured pets</h2>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 gap-4 lg:grid-cols-3 gap-6">
                 {toppets.map(pet => (
                     <FeaturedPets key={pet._id} pet={pet} />
                 ))}

@@ -22,8 +22,8 @@ const AllPetsPage = async ({ searchParams }) => {
     const pets = await getPets(search, species);
 
     return (
-        <div>
-            <h2 className="text-2xl font-bold text-center my-6">All Pets</h2>
+        <div className="dark:bg-slate-950">
+            <h2 className="text-2xl font-bold text-center py-6">All Pets</h2>
             <div className="md:flex md:justify-between px-4 py-4">
                 <SearchPets />
                 <FilterPets />

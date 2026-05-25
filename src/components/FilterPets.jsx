@@ -34,7 +34,7 @@ const FilterPets = () => {
                 params.set("species", value);
 
                 router.push(`/all-pets?${params.toString()}`);
-            }} className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-gray-700 shadow-sm outline-none transition focus:border-orange-500 focus:ring-2 focus:ring-orange-200 hover:shadow-md"
+            }} className="max-w-6xl rounded-xl border border-gray-300 dark:bg-slate-950 dark:text-white transition focus:border-orange-500 focus:ring-2 focus:ring-orange-200 hover:shadow-md"
         >
             <option value="">All</option>
             <option value="Cat">Cat</option>

@@ -25,7 +25,7 @@ const SearchPets = () => {
 
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 rounded"
+        className="bg-[#F59E0B] text-white px-4 rounded-xl"
       >
         Search
       </button>

@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from '@/components/Shared/Navbar'
 import Footer from '@/components/Shared/Footer'
 import { Toaster } from 'react-hot-toast';
+import NextThemeProvider from "@/providers/NextThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,13 +24,16 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
+        <NextThemeProvider>
         <Navbar/>
         {children}
         <Footer/>
         <Toaster/>
+        </NextThemeProvider>
         </body>
     </html>
   );

@@ -8,14 +8,14 @@ import { FiExternalLink } from "react-icons/fi";
 
 const FeaturedPets = ({ pet }) => {
     return (
-        <section className="px-[5%] md:py-24">
+        <section className="mx-4 md:my-2 border rounded-xl shadow-sm">
             <div>
                 <Image
                     alt={pet.petName}
                     src={pet.imageUrl}
-                    height={400}
-                    width={400}
-                    className="rounded-xl"
+                    height={500}
+                    width={500}
+                    className="w-full rounded-t-xl"
                 />
 
                 <div className="p-2">

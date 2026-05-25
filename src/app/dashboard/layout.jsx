@@ -25,7 +25,7 @@ export default function DashboardLayout({ children }) {
     ];
 
     return (
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen dark:bg-slate-950">
             {/* Mobile Drawer Button */}
             <button
                 onClick={() => setOpen(true)}
@@ -44,7 +44,7 @@ export default function DashboardLayout({ children }) {
 
             {/* Mobile Drawer */}
             <div
-                className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 md:hidden ${
+                className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 md:hidden dark:bg-slate-950 ${
                     open ? "translate-x-0" : "-translate-x-full"
                 }`}
             >
